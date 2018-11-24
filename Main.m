@@ -11,6 +11,8 @@ Menu = input('Yes or No? \n');
 
 if Menu == 0
     fprintf ('Have a great day.')
+    quit
 else
     fprintf('Okay then lets start the game!')
 end
+

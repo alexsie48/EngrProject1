@@ -16,7 +16,7 @@ if Menu == 0
     fprintf ('Have a great day.')
     quit
 else
-    fprintf('Okay then lets start the game!')
+    fprintf('Okay then lets start the game!\n')
 end
     %%just a check for user to confirm start of program
 
@@ -116,15 +116,41 @@ if rerole == 1
         imshow([Dice{reference}]);
             %%displays the new dice roll
             
-        fprintf('Time to select your catagory!')
+        fprintf('Time to select your catagory! \n')
     else
-        fprintf('Time to select your catagory!')
+        fprintf('Time to select your catagory! \n')
     end
 else
-    fprintf('Time to select your catagory!')
+    fprintf('Time to select your catagory! \n')
 end
 
 
 %% This is the start of the Upper Section of catagories
+
+fprintf('You must first select a catagory you would like to score in the upper section. \n')
+
+Aces = sum(reference(:) == 1);
+Twos = sum(reference(:) == 2);
+Threes = sum(reference(:) == 3);
+Fours = sum(reference(:) == 4);
+Fives = sum(reference(:) == 5);
+Sixes = sum(reference(:) == 6);
+    %%counts the number of each dice in its catagory
+
+Aces = Aces * 1;
+Twos = Twos * 2;
+Threes = Threes * 3;
+Fours = Fours * 4;
+Fives = Fives * 5;
+Sixes = Sixes * 6;
+    %%for corectly scorring each catagory 
+
+upScore = input('You may choose between Aces, Twos, Threes, Fours, Fives, Sixes:    ');
+
+
+%% This is the start of the Lower Section of catagories
+
+fprintf('You must now select a catagory you would like to score in the lower section. \n')
+
 
 

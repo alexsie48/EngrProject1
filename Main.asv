@@ -25,9 +25,4 @@ role = randi([1 6], [1 5])
 %%this dispays the role using the Dice.mat file
 imshow([Dice{role}]);
 
-fprintf('Would you like to rerole any dice?\n')
-
-redo = input('list the dice which you would like to rerole:   ')
-
-
 

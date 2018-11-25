@@ -152,6 +152,20 @@ fprintf('Your total score in the upper section is: %g', upScore);
 
 fprintf('\nYou must now select a catagory you would like to score in the lower section. \n')
 
-
+n = 0;
+i=0;
+%%while i<7
+%    if sum(reference(:) == i) == 3
+%       fprintf('no\n');
+%        i=i+1;
+%        n=i;
+%    else
+%        fprintf('congrats dude');
+        
+%    end
+%end
+    %%This loop is currently not working. comment out if a run is required.
+    
+    
 
 

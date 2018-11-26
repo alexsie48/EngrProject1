@@ -189,6 +189,11 @@ if any(up == 3)
     fprintf('Wow you got a Three of a kind!')
 end
 
+if any( up > 1)
+    lowScore = 40;
+    fprintf('Wow you got a Large Straight')
+end
+
 
 gameScore = upScore + lowScore;
 %%not a hunred percent sure if this how yahtzee works lol

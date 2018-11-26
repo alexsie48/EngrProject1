@@ -127,22 +127,24 @@ end
 
 %% This is the start of the Upper Section of catagories
 
+up = [0 0 0 0 0 0];
+
 fprintf('You must first select a catagory you would like to score in the upper section. \n')
 
-Ace = sum(reference(:) == 1);
-Two = sum(reference(:) == 2);
-Three = sum(reference(:) == 3);
-Four = sum(reference(:) == 4);
-Five = sum(reference(:) == 5);
-Six = sum(reference(:) == 6);
+up(1) = sum(reference(:) == 1);
+up(2) = sum(reference(:) == 2);
+up(3) = sum(reference(:) == 3);
+up(4) = sum(reference(:) == 4);
+up(5) = sum(reference(:) == 5);
+up(6) = sum(reference(:) == 6);
     %%counts the number of each dice in its catagory
 
-Aces = Ace * 1;
-Twos = Two * 2;
-Threes = Three * 3;
-Fours = Four * 4;
-Fives = Five * 5;
-Sixes = Six * 6;
+Aces = up(1) * 1;
+Twos = up(2) * 2;
+Threes = up(3) * 3;
+Fours = up(4) * 4;
+Fives = up(5) * 5;
+Sixes = up(6) * 6;
     %%for corectly scorring each catagory 
 
 upScore = input('You may choose between Aces, Twos, Threes, Fours, Fives, Sixes:    ');
@@ -166,6 +168,6 @@ i=0;
 %end
     %%This loop is currently not working. comment out if a run is required.
     
-    
+
 
 

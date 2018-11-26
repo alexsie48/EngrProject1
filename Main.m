@@ -179,10 +179,16 @@ if any(up == 4)
     fprintf('Wow you got a four of a kind!')
 end
 
+if any(up ==3 & up == 2)
+    lowScore = 25;
+    fprintf('Wow you got a full house!')
+end
+
 if any(up == 3)
     lowScore = total;
     fprintf('Wow you got a Three of a kind!')
 end
+
 
 gameScore = upScore + lowScore;
 %%not a hunred percent sure if this how yahtzee works lol

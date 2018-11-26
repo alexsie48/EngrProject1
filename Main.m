@@ -19,6 +19,13 @@ else
     fprintf('Okay then lets start the game!\n')
 end
 
+finishUp = 0;
+full = 0;
+
+
+while full<5
+
+
 %% This is the first Role
 % Roles dice randomly 
 role = randi([1 6], [1 5]);
@@ -99,13 +106,17 @@ if rerole == 1
         imshow([Dice{reference}]);
         
             
-        fprintf('Time to select your catagory! \n')
+        fprintf('Okay next turn \n')
     else
-        fprintf('Time to select your catagory! \n')
+        fprintf('Okay next turn! \n')
     end
 else
-    fprintf('Time to select your catagory! \n')
+    
 end
+
+
+fprintf('Time to select your catagory! \n')
+
 
 total = sum(reference);
 
@@ -133,7 +144,13 @@ Sixes = up(6) * 6;
 
 upScore = input('You may choose between Aces, Twos, Threes, Fours, Fives, Sixes:    ');
 
-fprintf('Your total score in the upper section is: %g', upScore);
+full = full + 1;
+
+fprintf('Okay next turn \n')
+
+finishUp = finishUp + upScore;
+end
+fprintf('Your total score in the upper section is: %g', finishUp);
 %% This is the start of the Lower Section of catagories
 
 fprintf('\nYou must now select a catagory you would like to score in the lower section. \n')
@@ -177,4 +194,4 @@ if any( up > 1)
     fprintf('Wow you got a Large Straight')
 end
 % end score
-gameScore = upScore + lowScore;
+gameScore = finishUp + lowScore;

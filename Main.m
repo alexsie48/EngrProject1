@@ -124,6 +124,7 @@ else
     fprintf('Time to select your catagory! \n')
 end
 
+total = sum(reference);
 
 %% This is the start of the Upper Section of catagories
 
@@ -153,9 +154,9 @@ fprintf('Your total score in the upper section is: %g', upScore);
 %% This is the start of the Lower Section of catagories
 
 fprintf('\nYou must now select a catagory you would like to score in the lower section. \n')
-
-n = 0;
-i=0;
+lowScore = 0;
+%%n = 0;
+%%i=0;
 %%while i<7
 %    if sum(reference(:) == i) == 3
 %       fprintf('no\n');
@@ -168,6 +169,20 @@ i=0;
 %end
     %%This loop is currently not working. comment out if a run is required.
     
+if any(up == 5)
+    lowScore = 50;
+    fprintf('Wow you got a Yahtzee')
+end
 
+if any(up == 4)
+    lowScore = total;
+    fprintf('Wow you got a four of a kind!')
+end
 
+if any(up == 3)
+    lowScore = total;
+    fprintf('Wow you got a Three of a kind!')
+end
 
+gameScore = upScore + lowScore;
+%%not a hunred percent sure if this how yahtzee works lol

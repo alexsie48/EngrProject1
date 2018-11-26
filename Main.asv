@@ -124,25 +124,28 @@ else
     fprintf('Time to select your catagory! \n')
 end
 
+total = sum(reference);
 
 %% This is the start of the Upper Section of catagories
 
+up = [0 0 0 0 0 0];
+
 fprintf('You must first select a catagory you would like to score in the upper section. \n')
 
-Ace = sum(reference(:) == 1);
-Two = sum(reference(:) == 2);
-Three = sum(reference(:) == 3);
-Four = sum(reference(:) == 4);
-Five = sum(reference(:) == 5);
-Six = sum(reference(:) == 6);
+up(1) = sum(reference(:) == 1);
+up(2) = sum(reference(:) == 2);
+up(3) = sum(reference(:) == 3);
+up(4) = sum(reference(:) == 4);
+up(5) = sum(reference(:) == 5);
+up(6) = sum(reference(:) == 6);
     %%counts the number of each dice in its catagory
 
-Aces = Ace * 1;
-Twos = Two * 2;
-Threes = Three * 3;
-Fours = Four * 4;
-Fives = Five * 5;
-Sixes = Six * 6;
+Aces = up(1) * 1;
+Twos = up(2) * 2;
+Threes = up(3) * 3;
+Fours = up(4) * 4;
+Fives = up(5) * 5;
+Sixes = up(6) * 6;
     %%for corectly scorring each catagory 
 
 upScore = input('You may choose between Aces, Twos, Threes, Fours, Fives, Sixes:    ');
@@ -151,19 +154,33 @@ fprintf('Your total score in the upper section is: %g', upScore);
 %% This is the start of the Lower Section of catagories
 
 fprintf('\nYou must now select a catagory you would like to score in the lower section. \n')
-
-n = 0;
-i=0;
-while i<7
-    if sum(reference(:) == i) < 3
-        fprintf('no')
-        i=i+1
-    else
-        fprintf('congrats dude')
-    end
-end
+lowScore = 0;
+%%n = 0;
+%%i=0;
+%%while i<7
+%    if sum(reference(:) == i) == 3
+%       fprintf('no\n');
+%        i=i+1;
+%        n=i;
+%    else
+%        fprintf('congrats dude');
+        
+%    end
+%end
     %%This loop is currently not working. comment out if a run is required.
     
-    
+if any(up == 5)
+    lowScore = 50;
+    fprintf('Wow you got a Yahtzee')
+end
 
+if any(up == 4)
+    lowScore = total
+    fprintf('Wow you got a four of ')
+end
+
+if any(up == 3)
+    lowScore = 50
+    fprintf('Wow you got a Yahtzee')
+end
 
